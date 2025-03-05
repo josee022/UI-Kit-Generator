@@ -108,7 +108,6 @@ export default function ButtonsPage() {
                   </SelectTrigger>
                   <SelectContent className="z-50 bg-white shadow-lg rounded-lg mt-1">
                     {" "}
-                    {/* Se asegura que la lista baje */}
                     {options.map(({ name, class: className }) => (
                       <SelectItem
                         key={name}
