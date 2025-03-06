@@ -9,8 +9,8 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <VantaBackground>
-      <div className="relative text-white flex flex-col items-center justify-center px-6">
+    <VantaBackground className="min-h-screen w-full">
+      <div className="relative text-white flex flex-col items-center justify-center px-6 min-h-full">
         <motion.div
           className="absolute top-8 left-4 p-3 rounded-full bg-black/40 border-2 border-blue-500 shadow-[0_0_15px_#00f]"
           initial={{ opacity: 0, scale: 0.8 }}
