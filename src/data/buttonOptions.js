@@ -202,6 +202,9 @@ export const buttonOptions = {
   ],
 
   animations: [
+    // ❌ Sin Animación
+    { name: "Sin Animación", class: "transition-none" },
+
     // 🔄 Transiciones Básicas
     { name: "Normal", class: "transition" },
     { name: "Suave", class: "transition duration-200 ease-in-out" },
