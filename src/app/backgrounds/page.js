@@ -19,15 +19,13 @@ import Link from "next/link";
 
 export default function BackgroundsPage() {
   const [selectedBackground, setSelectedBackground] = useState("");
-  const [selectedType, setSelectedType] = useState(""); // Para rastrear el tipo de fondo seleccionado
+  const [selectedType, setSelectedType] = useState(""); 
 
   const handleSelectChange = (type, value) => {
     if (selectedType !== type) {
-      // Si seleccionamos un nuevo tipo de fondo, restablecemos el anterior
       setSelectedBackground(value);
       setSelectedType(type);
     } else {
-      // Si seleccionamos otro fondo del mismo tipo, simplemente actualizamos el valor
       setSelectedBackground(value);
     }
   };
@@ -42,7 +40,6 @@ export default function BackgroundsPage() {
     setSelectedBackground("");
     setSelectedType("");
   };
-
 
   return (
     <VantaBackground className="min-h-screen w-full overflow-hidden">
@@ -84,7 +81,9 @@ export default function BackgroundsPage() {
               </li>
               <li>🔹 Observa en vivo los cambios en la vista previa.</li>
               <li>🔹 Copia el código generado y úsalo en tu proyecto.</li>
-              <li>🔹 Si quieres empezar de nuevo, usa el botón Vaciar Inputs.</li>
+              <li>
+                🔹 Si quieres empezar de nuevo, usa el botón Vaciar Inputs.
+              </li>
             </ul>
           </CardContent>
         </Card>
@@ -146,12 +145,11 @@ export default function BackgroundsPage() {
                 Copiar Código
               </Button>
               <Button
-  onClick={resetFields}
-  className="bg-red-500 hover:bg-red-600 px-6 py-2 rounded-md font-semibold"
->
-  Vaciar Inputs
-</Button>
-
+                onClick={resetFields}
+                className="bg-red-500 hover:bg-red-600 px-6 py-2 rounded-md font-semibold"
+              >
+                Vaciar Inputs
+              </Button>
             </div>
           </CardContent>
         </Card>

@@ -216,7 +216,7 @@ export const backgroundOptions = {
     {
       name: "Arcoíris Neón",
       class:
-        "bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 animate-bounce",
+        "bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 ",
     },
 
     // 🌀 Estilos Abstractos y Creativos
@@ -230,7 +230,5 @@ export const backgroundOptions = {
       class:
         "bg-gradient-to-r from-green-800 to-black shadow-lg shadow-green-500/50",
     },
-    { name: "Cyber Grid", class: "bg-black bg-grid-small text-green-500" },
-    { name: "Códigos Binarios", class: "bg-black bg-binary text-green-400" },
   ],
 };
