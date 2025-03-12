@@ -8,7 +8,7 @@ const features = [
   {
     title: "🎨 Generador de Botones",
     description:
-      "Crea botones personalizados con colores, bordes, sombras y animaciones.",
+      "Botones personalizados con colores, bordes, sombras y animaciones.",
     link: "/buttons",
   },
   {
@@ -63,17 +63,20 @@ export function FeaturesSection() {
       </motion.p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {features.map(({ title, description, link }, index) => (
+        {features.map(({ title, description, link }) => (
           <motion.div
             key={title}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
+            className="h-full"
           >
-            <Link href={link}>
-              <Card className="p-6 bg-white/20 backdrop-blur-lg rounded-lg shadow-lg text-white cursor-pointer">
-                <CardContent>
+            <Link href={link} className="h-full">
+              <Card className="p-6 bg-white/20 backdrop-blur-lg rounded-lg shadow-lg text-white cursor-pointer h-full">
+                <CardContent className="flex flex-col h-full">
                   <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                  <p className="text-gray-300 text-sm">{description}</p>
+                  <p className="text-gray-300 text-sm flex-grow">
+                    {description}
+                  </p>
                 </CardContent>
               </Card>
             </Link>
