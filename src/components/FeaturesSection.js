@@ -27,10 +27,10 @@ const features = [
     link: "/typography",
   },
   {
-    title: "🔮 Sombras y Efectos",
+    title: "🔮 Tarjetas para tus UIs",
     description:
-      "Configura box-shadow, text-shadow y glassmorphism en tiempo real.",
-    link: "/effects",
+      "Configura tarjetas y contenedores en tiempo real.",
+    link: "/cards",
   },
   {
     title: "🚀 Exportación de Código",
