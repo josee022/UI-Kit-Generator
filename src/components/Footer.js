@@ -23,38 +23,60 @@ export function Footer() {
 
         <div className="text-left">
           <h3 className="text-lg font-semibold text-white">Enlaces Útiles</h3>
-          <ul className="mt-2 space-y-2">
-            <li>
-              <Link
-                href="https://react-icons.github.io/react-icons/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-400 transition-colors"
-              >
-                React Icons
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://www.vantajs.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-400 transition-colors"
-              >
-                Vanta.js
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://ui.shadcn.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-400 transition-colors"
-              >
-                Shadcn
-              </Link>
-            </li>
-          </ul>
+          <div className="mt-2 grid grid-cols-2 gap-4">
+            {/* Columna Izquierda */}
+            <div>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="https://react-icons.github.io/react-icons/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-400 transition-colors"
+                  >
+                    React Icons
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="https://react-hot-toast.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-400 transition-colors"
+                  >
+                    ReactHotToast
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Columna Derecha */}
+            <div>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="https://ui.shadcn.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-400 transition-colors"
+                  >
+                    Shadcn
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.vantajs.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-400 transition-colors"
+                  >
+                    Vanta.js
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div className="text-left">

@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import VantaBackground from "@/components/VantaBackground";
 import Link from "next/link";
 import Image from "next/image";
+import { showToast } from "@/components/ToastAlert";
 
 export default function ButtonsPage() {
   const defaultValues = {
@@ -42,6 +43,7 @@ export default function ButtonsPage() {
     setShadow(defaultValues.shadow);
     setAnimation(defaultValues.animation);
     setResetKey(prevKey => prevKey + 1);
+    showToast("Inputs vacios!", "success");
   };
 
 
@@ -50,7 +52,7 @@ export default function ButtonsPage() {
   const copyToClipboard = () => {
     const cssCode = `class=\"${buttonClasses}\"`;
     navigator.clipboard.writeText(cssCode);
-    alert("Código copiado al portapapeles!");
+    showToast("Código copiado al portapapeles!", "success");
   };
 
   return (
