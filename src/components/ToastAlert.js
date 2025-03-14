@@ -3,7 +3,7 @@
 import { Toaster, toast } from "react-hot-toast";
 
 export default function ToastAlert() {
-  return <Toaster position="top-right" reverseOrder={false} />;
+  return <Toaster position="top-center" reverseOrder={false} />;
 }
 
 export function showToast(message, type = "success") {

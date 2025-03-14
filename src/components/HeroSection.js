@@ -52,7 +52,7 @@ export function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <Link href="/buttons">
+        <Link href="#funcionalidades">
           <Button className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-8 py-4 rounded-xl shadow-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105">
             🚀 Explorar UI Kit
           </Button>

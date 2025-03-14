@@ -16,10 +16,11 @@ import VantaBackground from "@/components/VantaBackground";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { showToast } from "@/components/ToastAlert";
 
 export default function BackgroundsPage() {
   const [selectedBackground, setSelectedBackground] = useState("");
-  const [selectedType, setSelectedType] = useState(""); 
+  const [selectedType, setSelectedType] = useState("");
 
   const handleSelectChange = (type, value) => {
     if (selectedType !== type) {
@@ -33,12 +34,13 @@ export default function BackgroundsPage() {
   const copyToClipboard = () => {
     const cssCode = `class="${selectedBackground}"`;
     navigator.clipboard.writeText(cssCode);
-    alert("Código copiado al portapapeles!");
+    showToast("Código copiado al portapapeles!", "success");
   };
 
   const resetFields = () => {
     setSelectedBackground("");
     setSelectedType("");
+    showToast("Inputs vacios!", "success");
   };
 
   return (

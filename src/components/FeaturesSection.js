@@ -19,7 +19,7 @@ const features = [
   {
     title: "🎨 Paletas de Colores",
     description: "Explora y copia combinaciones de colores listas para usar.",
-    link: "/colors",
+    link: "/colorsPaleta",
   },
   {
     title: "📝 Tipografías",
@@ -41,7 +41,7 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <div className="py-20 px-6 max-w-6xl mx-auto text-center">
+    <div id="funcionalidades" className="py-20 px-6 max-w-6xl mx-auto text-center">
       <motion.h2
         className="text-4xl font-bold text-white mb-6"
         initial={{ opacity: 0, y: -20 }}
@@ -59,7 +59,8 @@ export function FeaturesSection() {
       >
         Explora todas las herramientas disponibles para diseñadores y
         desarrolladores. Personaliza componentes, copia código fácilmente y
-        mejora la apariencia de tus proyectos.
+        mejora la apariencia de tus proyectos dando <strong> CLICK </strong>
+        en cualquier sección .
       </motion.p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
