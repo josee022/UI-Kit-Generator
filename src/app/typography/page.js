@@ -1,16 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import VantaBackground from "@/components/VantaBackground";
-import FontSelector from "@/components/FontSelector";
-import FontPreview from "@/components/FontPreview";
-import FontControls from "@/components/FontControls";
-import ExportFont from "@/components/ExportFont";
+import VantaBackground from "../../components/VantaBackground";
+import FontSelector from "../../components/FontSelector";
+import FontPreview from "../../components/FontPreview";
+import FontControls from "../../components/FontControls";
+import ExportFont from "../../components/ExportFont";
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "../../components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 
 export default function TypographyPage() {
   const [selectedFont, setSelectedFont] = useState("Poppins");

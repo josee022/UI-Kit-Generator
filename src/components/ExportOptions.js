@@ -1,4 +1,4 @@
-import { showToast } from "@/components/ToastAlert";
+import { showToast } from "../components/ToastAlert";
 
 export default function ExportOptions({ colors }) {
   const copyCSS = () => {

@@ -1,22 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { backgroundOptions } from "@/data/backgroundOptions";
-import { Card, CardContent } from "@/components/ui/card";
+import { backgroundOptions } from "../../data/backgroundOptions";
+import { Card, CardContent } from "../../components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
-import BackgroundPreview from "@/components/backgroundPreview";
-import VantaBackground from "@/components/VantaBackground";
+} from "../../components/ui/select";
+import { Button } from "../../components/ui/button";
+import BackgroundPreview from "../../components/backgroundPreview";
+import VantaBackground from "../../components/VantaBackground";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { showToast } from "@/components/ToastAlert";
+import { showToast } from "../../components/ToastAlert";
 
 export default function BackgroundsPage() {
   const [selectedBackground, setSelectedBackground] = useState("");

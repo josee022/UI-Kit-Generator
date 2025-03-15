@@ -1,8 +1,8 @@
 import { useState } from "react";
-import ColorSwatch from "@/components/ColorSwatch";
-import ExportOptions from "@/components/ExportOptions";
-import ColorPickerLive from "@/components/ColorPickerLive";
-import { Button } from "@/components/ui/button";
+import ColorSwatch from "../components/ColorSwatch";
+import ExportOptions from "../components/ExportOptions";
+import ColorPickerLive from "../components/ColorPickerLive";
+import { Button } from "../components/ui/button";
 
 export default function PaletteGenerator() {
   const [colors, setColors] = useState(["#ff0000", "#00ff00", "#0000ff", "#ffcc00"]);

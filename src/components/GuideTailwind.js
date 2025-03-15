@@ -5,8 +5,8 @@ import {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
-} from "@/components/ui/tooltip";
-import { Button } from "@/components/ui/button";
+} from "../components/ui/tooltip";
+import { Button } from "../components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { buttonOptions } from "../../data/buttonOptions";
+import { cardOptions } from "../../data/cardOptions";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import {
@@ -12,48 +12,41 @@ import {
   SelectValue,
 } from "../../components/ui/select";
 import { motion } from "framer-motion";
+import { showToast } from "../../components/ToastAlert";
 import VantaBackground from "../../components/VantaBackground";
 import Link from "next/link";
 import Image from "next/image";
-import { showToast } from "../../components/ToastAlert";
 
-export default function ButtonsPage() {
+export default function CardsPage() {
   const defaultValues = {
-    bgColor: "bg-black",
-    textColor: "text-white",
-    rounded: "rounded-md",
-    padding: "px-4 py-2",
-    shadow: "shadow-md",
-    animation: "transition",
+    width: "w-64",
+    height: "h-40",
+    bgColor: "bg-white",
+    textColor: "text-black",
+    borderRadius: "rounded-md",
+    hoverEffect: "",
   };
 
+  const [width, setWidth] = useState(defaultValues.width);
+  const [height, setHeight] = useState(defaultValues.height);
   const [bgColor, setBgColor] = useState(defaultValues.bgColor);
   const [textColor, setTextColor] = useState(defaultValues.textColor);
-  const [rounded, setRounded] = useState(defaultValues.rounded);
-  const [padding, setPadding] = useState(defaultValues.padding);
-  const [shadow, setShadow] = useState(defaultValues.shadow);
-  const [animation, setAnimation] = useState(defaultValues.animation);
-  const [resetKey, setResetKey] = useState(0);
+  const [borderRadius, setBorderRadius] = useState(defaultValues.borderRadius);
+  const [hoverEffect, setHoverEffect] = useState(defaultValues.hoverEffect);
+  const [resetKey, setResetKey] = useState(0); // 🔹 Clave para resetear los selectores
 
   const resetFields = () => {
+    setWidth(defaultValues.width);
+    setHeight(defaultValues.height);
     setBgColor(defaultValues.bgColor);
     setTextColor(defaultValues.textColor);
-    setRounded(defaultValues.rounded);
-    setPadding(defaultValues.padding);
-    setShadow(defaultValues.shadow);
-    setAnimation(defaultValues.animation);
-    setResetKey(prevKey => prevKey + 1);
-    showToast("Inputs vacios!", "success");
+    setBorderRadius(defaultValues.borderRadius);
+    setHoverEffect(defaultValues.hoverEffect);
+    setResetKey((prev) => prev + 1); // 🔹 Esto forzará la re-renderización de los selectores
+    showToast("Tarjeta reiniciada!", "success");
   };
 
-
-  const buttonClasses = `${bgColor} ${textColor} ${rounded} ${padding} ${shadow} ${animation} font-semibold`;
-
-  const copyToClipboard = () => {
-    const cssCode = `class=\"${buttonClasses}\"`;
-    navigator.clipboard.writeText(cssCode);
-    showToast("Código copiado al portapapeles!", "success");
-  };
+  const cardClasses = `${width} ${height} ${bgColor} ${textColor} ${borderRadius} ${hoverEffect} flex items-center justify-center transition-all duration-300`;
 
   return (
     <VantaBackground className="min-h-screen w-full">
@@ -78,80 +71,79 @@ export default function ButtonsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          🎨 Generador de Botones PRO
+          🔮 Tarjetas para tus UIs
         </motion.h1>
 
         <Card className="w-full max-w-2xl p-6 bg-white/20 backdrop-blur-lg shadow-lg rounded-lg mb-8 text-white">
           <CardContent>
             <h2 className="text-2xl font-semibold mb-2">¿Cómo funciona?</h2>
             <p className="text-gray-300">
-              Este generador te permite crear botones personalizados con
-              diferentes estilos. Puedes modificar su color, bordes, tamaño,
-              sombras y animaciones en tiempo real.
+              Este generador te permite crear cards personalizados con
+              diferentes estilos. Puedes modificar su color de fondo, color de texto, bordes, anchura,
+              altura y animaciones en tiempo real.
             </p>
             <ul className="list-disc list-inside text-gray-300 mt-3">
               <li>
-                🔹 Selecciona las características que deseas para tu botón.
+                🔹 Selecciona las características que deseas para el estilo de tus cards.
               </li>
               <li>
-                🔹 Pasa el cursor sobre el botón de ejemplo para ver los
+                🔹 Pasa el cursor sobre el card de ejemplo para ver los
                 cambios.
               </li>
               <li>
-                🔹 Una vez que te guste el diseño, copia el código CSS generado.
+                🔹 Una vez que te guste el diseño, copia el código generado.
               </li>
               <li>
-                🔹 Usa ese código en tu proyecto para aplicar el estilo al
-                botón.
+                🔹 Usa ese código en tu proyecto para aplicar estilos increíbles rápidamente.
               </li>
             </ul>
           </CardContent>
         </Card>
 
-        <Card className="w-full max-w-2xl p-8 bg-white/90 shadow-xl rounded-lg">
-          <CardContent className="flex flex-col items-center space-y-6">
-            <Button className={`${buttonClasses} hover:${bgColor}`}>
-              Botón de Ejemplo
-            </Button>
-
-            <div className="grid grid-cols-2 gap-4 w-full">
+        <Card className="w-full max-w-5xl p-8 bg-white/90 shadow-xl rounded-lg">
+          <CardContent className="flex flex-row justify-between w-full">
+            {/* Controles Dinámicos */}
+            <div className="grid grid-cols-2 gap-4 w-2/3">
               {[
                 {
-                  label: "Fondo",
-                  options: buttonOptions.backgrounds,
+                  label: "Ancho",
+                  options: cardOptions.widths,
+                  setter: setWidth,
+                },
+                {
+                  label: "Alto",
+                  options: cardOptions.heights,
+                  setter: setHeight,
+                },
+                {
+                  label: "Color Fondo",
+                  options: cardOptions.bgColors,
                   setter: setBgColor,
                 },
                 {
-                  label: "Texto",
-                  options: buttonOptions.textColors,
+                  label: "Color Texto",
+                  options: cardOptions.textColors,
                   setter: setTextColor,
                 },
                 {
                   label: "Bordes",
-                  options: buttonOptions.borders,
-                  setter: setRounded,
+                  options: cardOptions.borderRadius,
+                  setter: setBorderRadius,
                 },
                 {
-                  label: "Tamaño",
-                  options: buttonOptions.sizes,
-                  setter: setPadding,
-                },
-                {
-                  label: "Sombra",
-                  options: buttonOptions.shadows,
-                  setter: setShadow,
-                },
-                {
-                  label: "Animación",
-                  options: buttonOptions.animations,
-                  setter: setAnimation,
+                  label: "Hover Effect",
+                  options: cardOptions.hoverEffects,
+                  setter: setHoverEffect,
                 },
               ].map(({ label, options, setter }) => (
-                <div key={label} className="flex flex-col relative">
+                <div key={label} className="flex flex-col">
                   <span className="text-gray-600 font-medium mb-1">
                     {label}:
                   </span>
-                  <Select key={resetKey} onValueChange={(value) => setter(value)}>
+                  <Select
+                    key={resetKey}
+                    onValueChange={(value) => setter(value)}
+                  >
                     <SelectTrigger className="border p-2 w-full">
                       <SelectValue placeholder={`Selecciona ${label}`} />
                     </SelectTrigger>
@@ -171,21 +163,34 @@ export default function ButtonsPage() {
               ))}
             </div>
 
-            <div className="flex space-x-4">
-              <Button
-                onClick={copyToClipboard}
-                className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
-              >
-                Copiar Código
-              </Button>
-              <Button
-                onClick={resetFields}
-                className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-md font-semibold"
-              >
-                Vaciar Inputs
-              </Button>
+            {/* Vista Previa */}
+            <div
+              className={
+                cardClasses + " flex items-center justify-center w-1/3"
+              }
+            >
+              <span className="text-xl font-bold">Tarjeta</span>
             </div>
           </CardContent>
+
+          {/* Botones */}
+          <div className="flex justify-center mt-6 space-x-4">
+            <Button
+              onClick={() => {
+                navigator.clipboard.writeText(`class="${cardClasses}"`);
+                showToast("Código copiado!", "success");
+              }}
+              className="bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
+            >
+              Copiar Código
+            </Button>
+            <Button
+              onClick={resetFields}
+              className="bg-red-500 text-white px-6 py-2 rounded-md font-semibold"
+            >
+              Resetear
+            </Button>
+          </div>
         </Card>
 
         <div className="mt-6">

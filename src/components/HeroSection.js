@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import { useEffect, useState } from "react";
 
 export function HeroSection() {
@@ -42,8 +42,10 @@ export function HeroSection() {
         transition={{ duration: 0.8 }}
       >
         Diseña componentes modernos en tiempo real, personaliza estilos y copia
-        código con un clic. ¡Optimiza tu desarrollo con TailwindCSS y UI Kit
+        código con un sólo clic. ¡Optimiza tu desarrollo con TailwindCSS y UI Kit
         Generator!
+        <br />
+        Ahorra tiempo y esfuerzo en tu proyecto con increíbles diseños rápidamente.
       </motion.p>
 
       <motion.div
