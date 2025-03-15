@@ -1,21 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { buttonOptions } from "@/data/buttonOptions";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { buttonOptions } from "../../data/buttonOptions";
+import { Button } from "../../components/ui/button";
+import { Card, CardContent } from "../../components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../../components/ui/select";
 import { motion } from "framer-motion";
-import VantaBackground from "@/components/VantaBackground";
+import VantaBackground from "../../components/VantaBackground";
 import Link from "next/link";
 import Image from "next/image";
-import { showToast } from "@/components/ToastAlert";
+import { showToast } from "../../components/ToastAlert";
 
 export default function ButtonsPage() {
   const defaultValues = {

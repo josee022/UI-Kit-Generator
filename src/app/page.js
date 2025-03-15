@@ -1,9 +1,9 @@
 "use client";
-import VantaBackground from "@/components/VantaBackground";
-import { HeroSection } from "@/components/HeroSection";
-import { FeaturesSection } from "@/components/FeaturesSection";
-import { GuideTailwind } from "@/components/GuideTailwind";
-import { Footer } from "@/components/Footer";
+import VantaBackground from "../components/VantaBackground";
+import { HeroSection } from "../components/HeroSection";
+import { FeaturesSection } from "../components/FeaturesSection";
+import { GuideTailwind } from "../components/GuideTailwind";
+import { Footer } from "../components/Footer";
 import Image from "next/image";
 import { motion } from "framer-motion";
 

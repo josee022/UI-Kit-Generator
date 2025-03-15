@@ -1,4 +1,4 @@
-import { showToast } from "@/components/ToastAlert";
+import { showToast } from "../components/ToastAlert";
 
 export default function ExportFont({ selectedFont }) {
   const copyFontCSS = () => {
@@ -22,7 +22,7 @@ export default function ExportFont({ selectedFont }) {
       onClick={copyFontCSS}
       className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md shadow-md font-semibold mt-4"
     >
-      Copiar Código 
+      Copiar Código
     </button>
   );
 }

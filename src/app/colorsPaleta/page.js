@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import VantaBackground from "@/components/VantaBackground";
-import PaletteGenerator from "@/components/PaletteGenerator";
+import VantaBackground from "../../components/VantaBackground";
+import PaletteGenerator from "../../components/PaletteGenerator";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "../../components/ui/button";
+import { Card, CardContent } from "../../components/ui/card";
 
 export default function ColorsPage() {
   return (
