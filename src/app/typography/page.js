@@ -84,7 +84,7 @@ export default function TypographyPage() {
           color={color}
         />
 
-        {/* Controles de personalización */}
+        {/* Controles de personalización
         <FontControls
           fontSize={fontSize}
           setFontSize={setFontSize}
@@ -94,7 +94,7 @@ export default function TypographyPage() {
           setLetterSpacing={setLetterSpacing}
           color={color}
           setColor={setColor}
-        />
+        /> */}
 
         {/* Botón para copiar código */}
         <ExportFont selectedFont={selectedFont} />
