@@ -50,6 +50,9 @@ export default function ColorPickerLive() {
       <h2 className="text-lg font-semibold mb-4">
         🎨 Selector de Color en Vivo
       </h2>
+      <p className="text-gray-300 text-center mb-4">
+        Haz clic en el color para cambiarlo y obtén su código en HEX, RGBA y HSL.
+      </p>
 
       {/* Color Picker */}
       <input

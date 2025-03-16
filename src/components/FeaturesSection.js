@@ -33,9 +33,9 @@ const features = [
     link: "/cards",
   },
   {
-    title: "🚀 Exportación de Código",
-    description: "Copia estilos en CSS, JSON o descarga imágenes de fondo.",
-    link: "/export",
+    title: "🚀 Modales y Tooltips",
+    description: "Copia tus modales o tooltips personalizados para dinamizar tus páginas web.",
+    link: "/modalsTooltips",
   },
 ];
 
